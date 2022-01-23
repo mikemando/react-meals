@@ -11,7 +11,6 @@ const cartItems = (
     </ul>
 );
 
-// Cart
 const Cart = (props) => {
     return (
         <Modal onClose={props.onCloseCart}>

@@ -23,7 +23,7 @@
 
 .main-image img {
     width: 110%;
-    height: 101%;
+    height: 100%;
     object-fit: cover;
     transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
 }
