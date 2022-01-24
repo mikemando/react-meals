@@ -1,5 +1,4 @@
 import React from "react";
-import MealItemForm from "../Meals/MealItem/MealItemForm";
 
 import Modal from "../UI/Modal";
 import classes from "./Cart.module.css";
