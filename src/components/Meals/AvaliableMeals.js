@@ -36,6 +36,7 @@ const AvaliableMeals = () => {
         return (
             <MealItem
                 key={dummyMeal.id}
+                id={dummyMeal.id}
                 name={dummyMeal.name}
                 description={dummyMeal.description}
                 price={dummyMeal.price}
