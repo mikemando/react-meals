@@ -5,7 +5,7 @@ import MealItem from "./MealItem/MealItem";
 import classes from "./AvaliableMeals.module.css";
 
 const AvaliableMeals = () => {
-    const [meals, setMeals] = useState();
+    const [meals, setMeals] = useState([]);
 
     useEffect(() => {
         const fetchMeals = async () => {
