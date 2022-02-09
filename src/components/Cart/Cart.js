@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import Modal from "../UI/Modal";
 import CartContext from "../../store/cart-context";
@@ -8,6 +8,7 @@ import Checkout from "./Checkout";
 
 const Cart = (props) => {
     const cartCtx = useContext(CartContext);
+    const [isCheckout, setIsCheckout] = useState(false);
 
     const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
     const hasItems = cartCtx.items.length > 0;
@@ -35,6 +36,10 @@ const Cart = (props) => {
         </ul>
     );
 
+    const formOrderHandler = () => {
+        setIsCheckout(true);
+    };
+
     return (
         <Modal onClose={props.onCloseCart}>
             {cartItems}
@@ -42,7 +47,7 @@ const Cart = (props) => {
                 <span>Total Amount</span>
                 <span>{totalAmount}</span>
             </div>
-            <Checkout />
+            {isCheckout && <Checkout />}
             <div className={classes.actions}>
                 <button
                     className={classes["button-alt"]}
@@ -50,7 +55,14 @@ const Cart = (props) => {
                 >
                     Close
                 </button>
-                {hasItems && <button className={classes.button}>Order</button>}
+                {hasItems && (
+                    <button
+                        className={classes.button}
+                        onClick={formOrderHandler}
+                    >
+                        Order
+                    </button>
+                )}
             </div>
         </Modal>
     );
